@@ -41,13 +41,13 @@ jobs:
         docker push jcbird1012/neko:base
     
     - name: Build the latest firefox image
-      run: docker build -f ./.docker/firefox/Dockerfile -t jcbird1012/neko:latest .
+      run: docker build -f ./.docker/firefox/Dockerfile -t jcbird1012/neko:latest ./.docker/firefox
 
     - name: Build the latest chromium image
-      run: docker build -f ./.docker/chromium/Dockerfile -t jcbird1012/neko:chromium .
+      run: docker build -f ./.docker/chromium/Dockerfile -t jcbird1012/neko:chromium ./.docker/chromium
 
     - name: Build the latest ungoogled-chromium image
-      run: docker build -f ./.docker/ungoogled-chromium/Dockerfile -t jcbird1012/neko:ungoogled-chromium .
+      run: docker build -f ./.docker/ungoogled-chromium/Dockerfile -t jcbird1012/neko:ungoogled-chromium ./.docker/ungoogled-chromium
 
     - name: Push the Docker images
       run: | 
