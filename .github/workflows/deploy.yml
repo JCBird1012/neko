@@ -20,17 +20,17 @@ jobs:
     - name: Fetch unshallow
       run: git fetch --prune --tags --unshallow
 
-    - name: Get go dependencies and build server
-      working-directory: server
-      run: |
-        go get -v -t -d . 
-        ./build
+#    - name: Get go dependencies and build server
+#      working-directory: server
+#      run: |
+#        go get -v -t -d . 
+#        ./build
 
-    - name: Get npm dependencies and build Client
-      working-directory: client
-      run: | 
-        npm install
-        npm run build
+#    - name: Get npm dependencies and build Client
+#      working-directory: client
+#      run: | 
+#        npm install
+#        npm run build
 
     - name: Build the base image
       run: docker build -f ./.docker/base/Dockerfile -t jcbird1012/neko:base .
