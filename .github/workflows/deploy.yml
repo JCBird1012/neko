@@ -38,7 +38,7 @@ jobs:
     - name: Push the Docker images
       run: |
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ secrets.DOCKER_REGISTRY_URL }} -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push jcbird1012secrets.DOCKER_REGISTRY_URL/neko:base
+        docker push jcbird1012/neko:base
       
     - name: Build the openbox image
       run: docker build -f ./.docker/openbox/Dockerfile -t jcbird1012/neko:openbox .
